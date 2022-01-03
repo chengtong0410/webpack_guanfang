@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///src/style.css"],"names":[],"mappings":"AAAA;IACI,UAAU;IACV,mDAA6B;IAC7B,oBAAa;IAAb,oBAAa;IAAb,aAAa;EACf;AACF;IACI,gBAAgB;AACpB,C","file":"app.css","sourcesContent":[".hello {\n    color: red;\n    background: url('./icon.jpg');\n    display: flex;\n  }\nbody {\n    background: #fff;\n}"],"sourceRoot":""}
