@@ -11,7 +11,7 @@ function component() {
   const element = document.createElement("div");
   var btn = document.createElement("button");
   element.innerHTML = _.join(["Hello", "webpack"], "");
-  btn.innerHTML = "点击这里，然后查看 console！";
+  btn.innerHTML = "点击这里，然后查看 console hahha";
   btn.onclick = printMe;
   //   element.classList.add("hello");
   // 将图像添加到我们已经存在的 div 中。
