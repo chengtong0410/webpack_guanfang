@@ -11,13 +11,11 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /(\.css|\.less)$/,
         use: [
           {
             loader: "style-loader",
-            options: {
-              // publicPath: "../../",
-            },
+            options: {},
           },
           {
             loader: "css-loader",
@@ -25,6 +23,10 @@ module.exports = merge(common, {
           },
           {
             loader: "postcss-loader",
+          },
+          {
+            loader: "less-loader",
+            options: {},
           },
         ],
       },
@@ -34,5 +36,13 @@ module.exports = merge(common, {
   devtool: "inline-source-map",
   devServer: {
     open: true,
+    proxy: {
+      "/api": {
+        target: "http://www.baidu.com",
+        pathRewrite: { "^/api": "/api" },
+        secure: false,
+        changeOrigin: true,
+      },
+    },
   },
 });

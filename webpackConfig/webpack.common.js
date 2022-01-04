@@ -82,7 +82,16 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: "index.html",
+      template: "index.html",
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+    }),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.ProvidePlugin({
       _: "lodash",
@@ -105,3 +114,7 @@ module.exports = {
 // {
 //   loader: "ct-less-loader",
 // },
+console.log(
+  ' path.resolve(__dirname, "../", "index.html")',
+  path.resolve(__dirname, "../", "index.html")
+);

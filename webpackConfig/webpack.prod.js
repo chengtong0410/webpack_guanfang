@@ -20,10 +20,14 @@ module.exports = merge(common, {
           },
           {
             loader: "css-loader",
-            options: { importLoaders: 1 },
+            options: { importLoaders: 2 },
           },
           {
             loader: "postcss-loader",
+          },
+          {
+            loader: "less-loader",
+            options: {},
           },
         ],
       },
