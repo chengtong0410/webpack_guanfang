@@ -1,7 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const OptimizeCssPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ENV = process.env.NODE_ENV;
 module.exports = {
@@ -9,22 +8,22 @@ module.exports = {
     app: "./src/index.js",
   },
   output: {
-    filename: "[name].bundle.js",
-    // chunkFilename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: "static/js/[name].bundle.js",
+    chunkFilename: "static/js/[name].bundle.js",
+    path: path.resolve(__dirname, "../", "dist"),
   },
-  // optimization: {
-  //   runtimeChunk: "single",
-  //   splitChunks: {
-  //     cacheGroups: {
-  //       vendor: {
-  //         test: /[\\/]node_modules[\\/]/,
-  //         name: "vendors",
-  //         chunks: "all",
-  //       },
-  //     },
-  //   },
-  // },
+  optimization: {
+    runtimeChunk: "single",
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+        },
+      },
+    },
+  },
   resolve: {
     extensions: [".js", ".vue", ".json"],
     alias: {
@@ -40,6 +39,7 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env"],
+
             plugins: [
               [
                 "@babel/plugin-transform-runtime",
@@ -47,10 +47,11 @@ module.exports = {
                   corejs: 3,
                 },
               ],
+              "dynamic-import-webpack",
             ],
           },
         },
-        exclude: /node_modules/, //排除 node_modules 目录
+        exclude: /node_modules/,
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -82,7 +83,6 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin(),
     new webpack.HashedModuleIdsPlugin(),
-    new OptimizeCssPlugin(),
     new webpack.ProvidePlugin({
       _: "lodash",
     }),
@@ -94,7 +94,6 @@ module.exports = {
 //   resolveLoader: {
 //     modules: ["./node_modules", "./myloaders"],
 //   },
-
 // {
 //   loader: "ct-style-loader",
 // },
