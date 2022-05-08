@@ -43,6 +43,7 @@
     "webpackbar": "^5.0.2"
   },
   "dependencies": {
+    "axios": "^0.26.0",
     "lodash": "^4.17.21",
     "react-hot-loader": "^4.13.0"
   }

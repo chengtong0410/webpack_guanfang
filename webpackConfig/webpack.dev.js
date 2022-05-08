@@ -5,9 +5,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "development",
-  // entry: {
-  //   index: "./src/index.js",
-  // },
   module: {
     rules: [
       {
