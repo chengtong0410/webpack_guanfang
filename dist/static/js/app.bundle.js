@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{GsUv:function(n,o,e){},f5rK:function(n,o,e){},tjUo:function(n,o,e){"use strict";e.r(o);var t=e("LvDl"),c=e.n(t);e("f5rK"),e("GsUv");var i=function(){var n=document.createElement("div"),o=document.createElement("button");return n.innerHTML=c.a.join(["Hello","webpack"],""),o.innerHTML="点击这里，然后查看 console hahha",n.classList.add("hello"),o.onclick=function(){console.log("我被点击了！222")},n.appendChild(o),n}();document.body.appendChild(i)}},[["tjUo",1,2]]]);
-//# sourceMappingURL=app.bundle.js.map

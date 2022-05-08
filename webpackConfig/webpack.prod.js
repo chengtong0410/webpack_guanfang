@@ -20,10 +20,14 @@ module.exports = merge(common, {
           },
           {
             loader: "css-loader",
-            options: { importLoaders: 1 },
+            options: { importLoaders: 2 },
           },
           {
             loader: "postcss-loader",
+          },
+          {
+            loader: "less-loader",
+            options: {},
           },
         ],
       },
@@ -37,7 +41,7 @@ module.exports = merge(common, {
     }),
     new MiniCssExtractPlugin({
       filename: "static/css/[name].css",
-      chunkFilename: "static/css/[id].css",
+      chunkFilename: "static/css/[name].css",
     }),
   ],
 });
