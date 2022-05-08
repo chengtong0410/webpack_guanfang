@@ -8,7 +8,7 @@ function component() {
   btn.innerHTML = "点击这里，然后查看 console hahha";
   element.classList.add("hello");
   btn.onclick = function () {
-    console.log("我被点击了！222");
+    console.log("我被点击了！222222222223333333dasdaskdhaksd3");
   };
   element.appendChild(btn);
 
@@ -17,3 +17,4 @@ function component() {
 
 let element = component();
 document.body.appendChild(element);
+
